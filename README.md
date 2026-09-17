@@ -28,6 +28,18 @@ Then include the stylesheet and import:
 
 `import Inspire from "inspirejs.org"` gives you the `Inspire` API (also the global `Inspire`).
 
+## Pointing a plugin at a different module
+
+Name it in your deck's HTML — parsed before any module runs, so it works with a plain
+`import Inspire from "inspirejs.org"`:
+
+```html
+<body data-load-plugins="markdown: @inspirejs/markdown, mine: ./plugins/mine.js">
+```
+
+Naming a plugin loads it whether or not its selector matches. Bare specifiers resolve
+through the page's import map, everything else against the document.
+
 ## Slide decks using Inspire.js
 
 - [Lea Verou’s talks](https://github.com/leaverou/talks)
